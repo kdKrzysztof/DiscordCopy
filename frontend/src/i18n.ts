@@ -2,7 +2,7 @@ import i18next from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import { initReactI18next } from 'react-i18next';
 
-import translationEN from '../public/locales/en/translation.json';
+import translationEN from './locales/en/translation.json';
 
 const resources = {
   en: {
@@ -22,4 +22,4 @@ i18next
     }
   });
 
-  export default i18next
+export default i18next;
