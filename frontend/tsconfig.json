@@ -4,7 +4,17 @@
     "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
+    "types": ["node"],
     "skipLibCheck": true,
+    "baseUrl": "./",
+    "paths": {
+      "src/*": [ "./src/*" ],
+      "src": ["./src"],
+      "components/*": [ "./src/components/*" ],
+      "components": [ "./src/components" ],
+      "pages/*": ["./src/pages/*"],
+      "pages": ["./src/pages"]
+    },
 
     /* Bundler mode */
     "moduleResolution": "bundler",
