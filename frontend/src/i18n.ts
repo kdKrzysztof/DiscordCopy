@@ -6,7 +6,7 @@ import translationEN from './locales/en/translation.json';
 
 const resources = {
   en: {
-    tanslation: translationEN
+    translation: translationEN
   }
 };
 
@@ -15,7 +15,6 @@ i18next
   .use(initReactI18next)
   .init({
     resources,
-    lng: 'en',
     keySeparator: false,
     interpolation: {
       escapeValue: false
