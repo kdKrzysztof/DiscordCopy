@@ -1,13 +1,13 @@
 import { Box } from '@mui/material';
 
-import { CustomTextField, CustomTextFieldBody } from './LoginInput.styles';
+import { LoginTextField, LoginTextFieldBody } from './LoginInput.styles';
 
 const LoginInput = () => {
   return (
     <Box>
-      <CustomTextFieldBody>
-        <CustomTextField placeholder="Username" />
-      </CustomTextFieldBody>
+      <LoginTextFieldBody>
+        <LoginTextField placeholder="Username" />
+      </LoginTextFieldBody>
     </Box>
   );
 };
