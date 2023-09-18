@@ -19,7 +19,7 @@ const Login = () => {
       <form onSubmit={handleSubmit(onSubmit)} autoComplete="off">
         <LoginBody>
           <LoginTitleContainer>
-            <Typography variant="h5" fontWeight="bold">
+            <Typography variant="h4" fontWeight="bold">
               {t('LoginTitle')}
             </Typography>
             <LoginSubtitle variant="subtitle2">{t('LoginSubtitle')}</LoginSubtitle>
