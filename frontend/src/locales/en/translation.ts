@@ -1,5 +1,5 @@
-import translationLogin from './translationLogin.json';
+import translationLogin from './translations/translationLogin.json';
 
-const parsedTranslation = Object.assign(translationLogin);
+const translation = Object.assign(translationLogin);
 
-export default parsedTranslation;
+export default translation;
