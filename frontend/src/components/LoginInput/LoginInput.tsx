@@ -1,3 +1,4 @@
+import { InputLabel, Typography } from '@mui/material';
 import type { UseFormRegister } from 'react-hook-form';
 
 import type { LoginForm } from 'pages/login/Login.types';
@@ -18,16 +19,14 @@ interface ILoginProps {
 
 const LoginInput = ({ placeholder, register, name, required }: ILoginProps) => {
   return (
-    <>
-      <LoginTextFieldBody>
-        <LoginTextField
-          placeholder={placeholder}
-          fullWidth
-          required={required}
-          {...register(name as LoginSubmitFields)}
-        />
-      </LoginTextFieldBody>
-    </>
+    <LoginTextFieldBody>
+      <InputLabel>
+        <Typography variant="caption" fontWeight="bold">
+          {placeholder.toUpperCase()}
+        </Typography>
+      </InputLabel>
+      <LoginTextField fullWidth required={required} {...register(name as LoginSubmitFields)} />
+    </LoginTextFieldBody>
   );
 };
 
