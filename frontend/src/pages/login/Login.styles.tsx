@@ -24,10 +24,15 @@ export const LoginTitleContainer = styled(Box)({
   }
 });
 
-export const LoginContainer = styled(Paper)({
+export const LoginContainer = styled(Paper)(({ theme }) => ({
   width: 480,
-  padding: 25
-});
+  padding: 25,
+  [theme.breakpoints.down('sm')]: {
+    width: '100vw',
+    height: '100vh',
+    paddingTop: '20%'
+  }
+}));
 
 export const LoginSubtitle = styled(Typography)(({ theme }) => ({
   color: (theme.palette as CustomPaletteOptions).LoginSubtitleColor
