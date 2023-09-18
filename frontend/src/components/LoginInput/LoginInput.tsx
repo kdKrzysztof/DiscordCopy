@@ -1,5 +1,4 @@
 import { InputLabel, Typography } from '@mui/material';
-import { useEffect, useState } from 'react';
 import type { UseFormRegister } from 'react-hook-form';
 
 import type { LoginForm } from 'pages/login/Login.types';

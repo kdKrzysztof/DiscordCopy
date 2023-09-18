@@ -12,7 +12,7 @@ import {
 import useLoginUtils from './Login.utils';
 
 const Login = () => {
-  const { t, handleSubmit, onSubmit, register, errors } = useLoginUtils();
+  const { t, handleSubmit, onSubmit, register, emailErr, passwordErr } = useLoginUtils();
 
   return (
     <LoginContainer elevation={4}>
@@ -24,8 +24,20 @@ const Login = () => {
             </Typography>
             <LoginSubtitle variant="subtitle2">{t('LoginSubtitle')}</LoginSubtitle>
           </LoginTitleContainer>
-          <LoginInput placeholder="Email" register={register} name="email" required={true} />
-          <LoginInput placeholder="Password" register={register} name="password" required={true} />
+          <LoginInput
+            placeholder="Email"
+            register={register}
+            name="email"
+            required={true}
+            error={emailErr}
+          />
+          <LoginInput
+            placeholder="Password"
+            register={register}
+            name="password"
+            required={true}
+            error={passwordErr}
+          />
           <Button variant="contained" fullWidth type="submit">
             {t('LoginButton')}
           </Button>
