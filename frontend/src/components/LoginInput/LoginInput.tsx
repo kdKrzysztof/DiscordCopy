@@ -1,30 +1,33 @@
 import type { UseFormRegister } from 'react-hook-form';
 
-import type { LoginSubmit } from 'pages/login/Login.types';
+import type { LoginForm } from 'pages/login/Login.types';
 
 import { LoginTextField, LoginTextFieldBody } from './LoginInput.styles';
 
 enum LoginSubmitFields {
-  Username = 'username',
+  Email = 'email',
   Password = 'password'
 }
 
 interface ILoginProps {
   placeholder: string;
-  register: UseFormRegister<LoginSubmit>;
+  register: UseFormRegister<LoginForm>;
   name: string;
   required: boolean;
 }
 
 const LoginInput = ({ placeholder, register, name, required }: ILoginProps) => {
   return (
-    <LoginTextFieldBody>
-      <LoginTextField
-        placeholder={placeholder}
-        fullWidth
-        {...register(name as LoginSubmitFields, { required: required })}
-      />
-    </LoginTextFieldBody>
+    <>
+      <LoginTextFieldBody>
+        <LoginTextField
+          placeholder={placeholder}
+          fullWidth
+          required={required}
+          {...register(name as LoginSubmitFields)}
+        />
+      </LoginTextFieldBody>
+    </>
   );
 };
 
