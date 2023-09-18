@@ -1,19 +1,13 @@
 import { Button, Link, Typography } from '@mui/material';
-import { useForm } from 'react-hook-form';
-import { useTranslation } from 'react-i18next';
 
 import { LoginInput } from 'components';
 
 import { LoginBody, LoginContainer, LoginTitleContainer } from './Login.styles';
-import { LoginSubmit } from './Login.types';
+import useLoginUtils from './Login.utils';
 
 const Login = () => {
-  const { t } = useTranslation();
-
-  const { register, handleSubmit } = useForm<LoginSubmit>();
-  const onSubmit = (data: LoginSubmit) => {
-    console.log(data);
-  };
+  const { t, handleSubmit, onSubmit, register, errors } = useLoginUtils();
+  console.log(errors?.email?.message);
   return (
     <LoginContainer elevation={4}>
       <form onSubmit={handleSubmit(onSubmit)} autoComplete="off">
@@ -24,8 +18,8 @@ const Login = () => {
             </Typography>
             <Typography variant="subtitle2">{t('LoginSubtitle')}</Typography>
           </LoginTitleContainer>
-          <LoginInput placeholder="Username" register={register} name="username" required={true} />
-          <LoginInput placeholder="Password" register={register} name="password" required={false} />
+          <LoginInput placeholder="Email" register={register} name="email" required={true} />
+          <LoginInput placeholder="Password" register={register} name="password" required={true} />
           <Button variant="contained" fullWidth type="submit">
             {t('LoginButton')}
           </Button>
