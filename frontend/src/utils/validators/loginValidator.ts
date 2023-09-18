@@ -1,7 +1,7 @@
 import * as z from 'zod';
 
 const FormSchema = z.object({
-  email: z.string().email({ message: 'Login or password is not valid' }),
+  email: z.string().email({ message: 'Email or password is not valid' }),
   password: z.string()
 });
 
