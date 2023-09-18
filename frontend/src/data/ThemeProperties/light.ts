@@ -1,6 +1,6 @@
 import type { PaletteOptions } from '@mui/material';
 
-const light: PaletteOptions | undefined = {
+const light: PaletteOptions = {
   LoginInputBG: 'rgba(0, 0, 0, 0.1)'
 } as PaletteOptions;
 
