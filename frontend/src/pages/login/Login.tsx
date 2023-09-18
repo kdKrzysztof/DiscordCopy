@@ -7,7 +7,7 @@ import useLoginUtils from './Login.utils';
 
 const Login = () => {
   const { t, handleSubmit, onSubmit, register, errors } = useLoginUtils();
-  console.log(errors?.email?.message);
+  
   return (
     <LoginContainer elevation={4}>
       <form onSubmit={handleSubmit(onSubmit)} autoComplete="off">
