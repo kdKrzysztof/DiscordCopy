@@ -13,6 +13,7 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': 'warn',
     'react-refresh/only-export-components': 'warn',
     '@tanstack/query/exhaustive-deps': 'error',
-    '@tanstack/query/prefer-query-object-syntax': 'error'
+    '@tanstack/query/prefer-query-object-syntax': 'error',
+    'no-useless-escape': 'none'
   }
 };
