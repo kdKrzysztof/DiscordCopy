@@ -10,5 +10,6 @@ export const LoginTextField = styled(InputBase)({
 export const LoginTextFieldBody = styled(Box)(({ theme }) => ({
   background: (theme.palette as CustomPaletteOptions).LoginInputBG,
   padding: 4,
-  borderRadius: 4
+  borderRadius: 4,
+  width: '100%'
 }));
