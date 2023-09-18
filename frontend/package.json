@@ -21,7 +21,8 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.46.1",
     "react-i18next": "^13.2.2",
-    "react-router-dom": "^6.16.0"
+    "react-router-dom": "^6.16.0",
+    "zod": "^3.22.2"
   },
   "devDependencies": {
     "@tanstack/eslint-plugin-query": "^4.34.1",
