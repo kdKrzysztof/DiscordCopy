@@ -1,4 +1,5 @@
 import { InputLabel, Typography } from '@mui/material';
+import { useEffect, useState } from 'react';
 import type { UseFormRegister } from 'react-hook-form';
 
 import type { LoginForm } from 'pages/login/Login.types';
@@ -15,14 +16,16 @@ interface ILoginProps {
   register: UseFormRegister<LoginForm>;
   name: string;
   required: boolean;
+  error: string | undefined;
 }
 
-const LoginInput = ({ placeholder, register, name, required }: ILoginProps) => {
+const LoginInput = ({ placeholder, register, name, required, error }: ILoginProps) => {
   return (
     <LoginTextFieldBody>
       <InputLabel>
-        <Typography variant="caption" fontWeight="bold">
+        <Typography variant="caption" fontWeight="bold" color={error ? 'error' : 'default'}>
           {placeholder.toUpperCase()}
+          {error ? ' - ' + error : null}
         </Typography>
       </InputLabel>
       <LoginTextField fullWidth required={required} {...register(name as LoginSubmitFields)} />
