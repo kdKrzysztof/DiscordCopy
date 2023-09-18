@@ -1,4 +1,6 @@
-import { Box, Paper, styled } from '@mui/material';
+import { Box, Paper, Typography, styled } from '@mui/material';
+
+import type { CustomPaletteOptions } from 'interfaces';
 
 export const LoginBody = styled(Box)(({ theme }) => ({
   display: 'flex',
@@ -24,5 +26,14 @@ export const LoginTitleContainer = styled(Box)({
 
 export const LoginContainer = styled(Paper)({
   width: 480,
-  padding: 20
+  padding: 25
+});
+
+export const LoginSubtitle = styled(Typography)(({ theme }) => ({
+  color: (theme.palette as CustomPaletteOptions).LoginSubtitleColor
+}));
+
+export const CreateAccountText = styled(Typography)({
+  width: '100%',
+  textAlign: 'left'
 });

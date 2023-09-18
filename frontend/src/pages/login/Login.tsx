@@ -2,12 +2,18 @@ import { Button, Link, Typography } from '@mui/material';
 
 import { LoginInput } from 'components';
 
-import { LoginBody, LoginContainer, LoginTitleContainer } from './Login.styles';
+import {
+  CreateAccountText,
+  LoginBody,
+  LoginContainer,
+  LoginSubtitle,
+  LoginTitleContainer
+} from './Login.styles';
 import useLoginUtils from './Login.utils';
 
 const Login = () => {
   const { t, handleSubmit, onSubmit, register, errors } = useLoginUtils();
-  
+
   return (
     <LoginContainer elevation={4}>
       <form onSubmit={handleSubmit(onSubmit)} autoComplete="off">
@@ -16,16 +22,16 @@ const Login = () => {
             <Typography variant="h5" fontWeight="bold">
               {t('LoginTitle')}
             </Typography>
-            <Typography variant="subtitle2">{t('LoginSubtitle')}</Typography>
+            <LoginSubtitle variant="subtitle2">{t('LoginSubtitle')}</LoginSubtitle>
           </LoginTitleContainer>
           <LoginInput placeholder="Email" register={register} name="email" required={true} />
           <LoginInput placeholder="Password" register={register} name="password" required={true} />
           <Button variant="contained" fullWidth type="submit">
             {t('LoginButton')}
           </Button>
-          <Typography variant="subtitle2">
+          <CreateAccountText variant="subtitle2">
             {t('LoginNeedAccount')} <Link>{t('LoginClickHere')}</Link>
-          </Typography>
+          </CreateAccountText>
         </LoginBody>
       </form>
     </LoginContainer>
