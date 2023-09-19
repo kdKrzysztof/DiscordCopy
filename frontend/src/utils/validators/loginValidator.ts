@@ -1,9 +1,10 @@
+import { t } from 'i18next';
 import * as z from 'zod';
 
 const FormSchema = z.object({
-  email: z.string().email({ message: 'Email or password is not valid' }),
+  email: z.string().email({ message: t('email') }),
   password: z.string().refine((value) => value.trim() !== '', {
-    message: 'Input cannot be an empty string'
+    message: t('emptyInput')
   })
 });
 

@@ -1,3 +1,4 @@
+import { t } from 'i18next';
 import * as z from 'zod';
 
 import { hasSpecialCharacters } from '..';
@@ -5,15 +6,21 @@ import { hasSpecialCharacters } from '..';
 const FormSchema = z.object({
   username: z
     .string()
-    .min(3, { message: 'The username must be 4 characters or more' })
-    .max(20, { message: 'The username must be 20 characters or less' })
-    .regex(/^[a-zA-Z0-9_]+$/, 'The username must contain only letters, numbers and underscore (_)'),
+    .min(3, { message: t('usernameMin') })
+    .max(20, { message: t('usernameMax') })
+    .regex(/^[a-zA-Z0-9_]+$/, { message: t('usernameRegex') }),
   email: z.string().email({
-    message: 'Invalid email. Please enter a valid email address'
+    message: t('email')
   }),
-  password: z.string().refine((input) => {
-    return hasSpecialCharacters(input);
-  })
+  password: z
+    .string()
+    .min(5, { message: t('passwordMin') })
+    .refine(
+      (input) => {
+        return hasSpecialCharacters(input);
+      },
+      { message: t('passwordSpecialChars') }
+    )
 });
 
 export default FormSchema;
