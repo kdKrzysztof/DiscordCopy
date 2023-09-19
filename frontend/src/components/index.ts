@@ -1,2 +1,2 @@
-export { default as LoginInput } from './LoginInput';
+export { default as StyledInput } from './StyledInput';
 export { default as ChangeThemeButton } from './ChangeThemeButton';
