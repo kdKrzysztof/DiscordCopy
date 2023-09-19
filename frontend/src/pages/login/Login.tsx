@@ -12,7 +12,7 @@ import {
 import useLoginUtils from './Login.utils';
 
 const Login = () => {
-  const { t, handleSubmit, onSubmit, register, emailErr, passwordErr } = useLoginUtils();
+  const { t, handleSubmit, onSubmit, register, errorMessages } = useLoginUtils();
 
   return (
     <LoginContainer elevation={4}>
@@ -29,20 +29,20 @@ const Login = () => {
             register={register}
             name="email"
             required={true}
-            error={emailErr}
+            error={errorMessages?.email}
           />
           <LoginInput
             placeholder="Password"
             register={register}
             name="password"
             required={true}
-            error={passwordErr}
+            error={errorMessages?.password}
           />
           <Button variant="contained" fullWidth type="submit">
             {t('LoginButton')}
           </Button>
           <CreateAccountText variant="subtitle2">
-            {t('LoginNeedAccount')} <Link>{t('LoginClickHere')}</Link>
+            {t('LoginNeedAccount')} <Link href="/register">{t('LoginClickHere')}</Link>
           </CreateAccountText>
         </LoginBody>
       </form>

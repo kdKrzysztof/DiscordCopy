@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { loginValidator } from 'src/utils/validators';
 
 import { LoginForm } from './Login.types';
-import useSetErrors from './hooks/useSetErrors';
+import useSetErrors from './hooks/useSetLoginErrors';
 
 const useLoginUtils = () => {
   const { t } = useTranslation();
@@ -22,13 +22,13 @@ const useLoginUtils = () => {
     }
   });
 
-  const { emailErr, passwordErr } = useSetErrors({ errors });
+  const { errorMessages } = useSetErrors({ errors });
 
   const onSubmit = (data: LoginForm) => {
     console.log(data);
   };
 
-  return { register, handleSubmit, onSubmit, t, errors, emailErr, passwordErr };
+  return { register, handleSubmit, onSubmit, t, errors, errorMessages };
 };
 
 export default useLoginUtils;
