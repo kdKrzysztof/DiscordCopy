@@ -12,7 +12,7 @@ import {
 import useLoginUtils from './Login.utils';
 
 const Login = () => {
-  const { t, handleSubmit, onSubmit, register, errorMessages } = useLoginUtils();
+  const { t, handleSubmit, onSubmit, register, errors } = useLoginUtils();
 
   return (
     <LoginContainer elevation={4}>
@@ -29,14 +29,14 @@ const Login = () => {
             register={register}
             name="email"
             required={true}
-            error={errorMessages?.email}
+            error={errors?.email?.message}
           />
           <StyledTextfield
             placeholder="Password"
             register={register}
             name="password"
             required={true}
-            error={errorMessages?.password}
+            error={errors?.password?.message}
           />
           <Button variant="contained" fullWidth type="submit">
             {t('LoginButton')}
