@@ -1,6 +1,6 @@
 import { Button, Link, Typography } from '@mui/material';
 
-import { StyledInput } from 'components';
+import { StyledTextfield } from 'components';
 
 import {
   CreateAccountText,
@@ -24,14 +24,14 @@ const Login = () => {
             </Typography>
             <LoginSubtitle variant="subtitle2">{t('LoginSubtitle')}</LoginSubtitle>
           </LoginTitleContainer>
-          <StyledInput
+          <StyledTextfield
             placeholder="Email"
             register={register}
             name="email"
             required={true}
             error={errorMessages?.email}
           />
-          <StyledInput
+          <StyledTextfield
             placeholder="Password"
             register={register}
             name="password"

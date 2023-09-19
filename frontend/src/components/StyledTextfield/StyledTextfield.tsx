@@ -1,7 +1,7 @@
 import { InputLabel, Typography } from '@mui/material';
 import type { FieldValues, Path, UseFormRegister } from 'react-hook-form';
 
-import { LoginTextField, LoginTextFieldBody } from './StyledInput.styles';
+import { LoginTextField, LoginTextFieldBody } from './StyledTextfield.styles';
 
 interface ILoginProps<TForm extends FieldValues> {
   placeholder: string;
@@ -11,7 +11,7 @@ interface ILoginProps<TForm extends FieldValues> {
   error: string | undefined;
 }
 
-const LoginInput = <TForm extends FieldValues>({
+const StyledTextfield = <TForm extends FieldValues>({
   placeholder,
   register,
   name,
@@ -31,4 +31,4 @@ const LoginInput = <TForm extends FieldValues>({
   );
 };
 
-export default LoginInput;
+export default StyledTextfield;
