@@ -1,6 +1,5 @@
-import translationLogin from './translations/translationLogin.json';
-import translationValidation from './translations/translationValidation.json';
+import { translationLogin, translationRegister, translationValidation } from './translations';
 
-const translation = Object.assign(translationLogin, translationValidation);
+const translation = Object.assign(translationLogin, translationValidation, translationRegister);
 
 export default translation;
