@@ -1,5 +1,8 @@
-import { t } from 'i18next';
 import * as z from 'zod';
+
+import i18n from 'src/i18n';
+
+const { t } = i18n;
 
 const FormSchema = z.object({
   email: z.string().email({ message: t('email') }),
