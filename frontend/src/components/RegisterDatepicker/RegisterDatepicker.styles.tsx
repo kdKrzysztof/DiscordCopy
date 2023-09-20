@@ -19,6 +19,14 @@ export const DatepickerContainer = styled(Box)(({ theme }) => ({
   ['& > :not(:first-of-type):not(:last-of-type)']: {
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(1)
+  },
+  ['@media screen and (max-width: 325px)']: {
+    flexWrap: 'nowrap',
+    ['& > :not(style)']: {
+      marginLeft: '1px !important',
+      marginRight: '1px !important',
+      marginTop: theme.spacing(1)
+    }
   }
 }));
 
