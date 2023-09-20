@@ -1,6 +1,9 @@
 import { InputLabel, Typography } from '@mui/material';
+import dayjs from 'dayjs';
 
 import { StyledSelect } from 'components';
+
+import GetNumberArray from 'utils/GetDaysArray';
 
 import { DatepickerContainer, RegisterDatepickerContainer } from './RegisterDatepicker.styles';
 
@@ -10,6 +13,10 @@ interface IRegisterDatepicker {
 }
 
 const RegisterDatepicker = ({ error, placeholder }: IRegisterDatepicker) => {
+  const daysArr = GetNumberArray(31);
+  const monthsArr = GetNumberArray(12);
+  const yearsArr = GetNumberArray(dayjs().year() - 3, 1900).reverse();
+
   return (
     <RegisterDatepickerContainer>
       <InputLabel>
@@ -19,9 +26,9 @@ const RegisterDatepicker = ({ error, placeholder }: IRegisterDatepicker) => {
         </Typography>
       </InputLabel>
       <DatepickerContainer>
-        <StyledSelect placeholder="test" />
-        <StyledSelect />
-        <StyledSelect />
+        <StyledSelect placeholder="day" stack={daysArr} />
+        <StyledSelect placeholder="month" stack={monthsArr} />
+        <StyledSelect placeholder="year" stack={yearsArr} />
       </DatepickerContainer>
     </RegisterDatepickerContainer>
   );
