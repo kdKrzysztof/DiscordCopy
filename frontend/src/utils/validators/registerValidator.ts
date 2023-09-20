@@ -9,7 +9,7 @@ const { t } = i18n;
 const FormSchema = z.object({
   username: z
     .string()
-    .min(3, { message: t('usernameMin') })
+    .min(4, { message: t('usernameMin') })
     .max(20, { message: t('usernameMax') })
     .regex(/^[a-zA-Z0-9_]+$/, { message: t('usernameRegex') }),
   email: z.string().email({
