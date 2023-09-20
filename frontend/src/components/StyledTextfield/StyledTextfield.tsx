@@ -1,14 +1,14 @@
 import { InputLabel, Typography } from '@mui/material';
 import type { FieldValues, Path, UseFormRegister } from 'react-hook-form';
 
-import { LoginTextField, LoginTextFieldBody } from './StyledTextfield.styles';
+import { StyledTextFieldContainer, TextFieldBody } from './StyledTextfield.styles';
 
 interface ILoginProps<TForm extends FieldValues> {
-  placeholder: string;
+  placeholder?: string;
   register: UseFormRegister<TForm>;
   name: Path<TForm>;
-  required: boolean;
-  error: string | undefined;
+  required?: boolean;
+  error?: string | undefined;
 }
 
 const StyledTextfield = <TForm extends FieldValues>({
@@ -19,15 +19,15 @@ const StyledTextfield = <TForm extends FieldValues>({
   error
 }: ILoginProps<TForm>) => {
   return (
-    <LoginTextFieldBody>
+    <StyledTextFieldContainer>
       <InputLabel>
         <Typography variant="caption" fontWeight="bold" color={error ? 'error' : 'default'}>
-          {placeholder.toUpperCase()}
+          {placeholder?.toUpperCase()}
           {error ? ' - ' + error : null}
         </Typography>
       </InputLabel>
-      <LoginTextField fullWidth required={required} {...register(name)} />
-    </LoginTextFieldBody>
+      <TextFieldBody fullWidth required={required} {...register(name)} />
+    </StyledTextFieldContainer>
   );
 };
 
