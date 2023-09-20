@@ -1,4 +1,4 @@
-import { styled, Box, Paper } from "@mui/material";
+import { Box, Paper, styled } from '@mui/material';
 
 export const RegisterTitleContainer = styled(Box)({
   display: 'flex',
