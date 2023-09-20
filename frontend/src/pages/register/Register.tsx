@@ -1,6 +1,6 @@
 import { Button, Typography } from '@mui/material';
 
-import { StyledTextfield } from 'src/components';
+import { RegisterDatepicker, StyledTextfield } from 'components';
 
 import { RegisterBody, RegisterContainer, RegisterTitleContainer } from './Register.styles';
 import useRegisterUtils from './Register.utils';
@@ -37,6 +37,7 @@ const Register = () => {
             error={errors?.password?.message}
             required={true}
           />
+          <RegisterDatepicker placeholder={t('Datepicker')} />
           <Button variant="contained" fullWidth type="submit">
             {t('RegisterButton')}
           </Button>
