@@ -3,7 +3,7 @@ import dayjs from 'dayjs';
 
 import { StyledSelect } from 'components';
 
-import GetNumberArray from 'utils/GetDaysArray';
+import GetNumberArray from 'src/utils/GetNumberArray';
 
 import { DatepickerContainer, RegisterDatepickerContainer } from './RegisterDatepicker.styles';
 
