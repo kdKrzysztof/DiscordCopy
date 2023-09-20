@@ -2,7 +2,8 @@ import { Box, InputBase, styled } from '@mui/material';
 
 import type { CustomPaletteOptions } from 'interfaces';
 
-export const LoginTextField = styled(InputBase)(({ theme }) => ({
+export const TextFieldBody = styled(InputBase)(({ theme }) => ({
+  height: '40px',
   padding: 4,
   borderRadius: 4,
   paddingLeft: 10,
@@ -10,7 +11,7 @@ export const LoginTextField = styled(InputBase)(({ theme }) => ({
   background: (theme.palette as CustomPaletteOptions).LoginInputBG
 }));
 
-export const LoginTextFieldBody = styled(Box)({
+export const StyledTextFieldContainer = styled(Box)({
   width: '100%',
   textAlign: 'left'
 });
