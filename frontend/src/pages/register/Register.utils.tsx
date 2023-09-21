@@ -28,7 +28,7 @@ const useRegisterUtils = () => {
       }
     }
   });
-  console.log(errors);
+
   const onSubmit = (data: RegisterForm) => {
     let parsedDate = getDate(data.date.day, data.date.month, data.date.year);
   };
