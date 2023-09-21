@@ -4,6 +4,8 @@ import { useTranslation } from 'react-i18next';
 
 import { registerValidator } from 'src/utils/validators';
 
+import { getDate } from 'utils';
+
 import { RegisterForm } from './Register.types';
 
 const useRegisterUtils = () => {
@@ -18,12 +20,17 @@ const useRegisterUtils = () => {
     defaultValues: {
       username: '',
       email: '',
-      password: ''
+      password: '',
+      date: {
+        day: undefined,
+        month: undefined,
+        year: undefined
+      }
     }
   });
-
+  console.log(errors);
   const onSubmit = (data: RegisterForm) => {
-    console.log(data);
+    let parsedDate = getDate(data.date.day, data.date.month, data.date.year);
   };
 
   return { register, handleSubmit, errors, onSubmit, t };
