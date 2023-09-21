@@ -8,7 +8,7 @@ import useRegisterUtils from './Register.utils';
 const Register = () => {
   const { errors, handleSubmit, onSubmit, register, t } = useRegisterUtils();
   return (
-    <RegisterContainer>
+    <RegisterContainer elevation={4}>
       <form onSubmit={handleSubmit(onSubmit)} autoComplete="off">
         <RegisterBody>
           <RegisterTitleContainer>
