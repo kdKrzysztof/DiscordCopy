@@ -1,22 +1,26 @@
 import { InputLabel, Typography } from '@mui/material';
 import dayjs from 'dayjs';
+import type { UseFormRegister } from 'react-hook-form';
+
+import type { RegisterForm } from 'pages/register/Register.types';
 
 import { StyledSelect } from 'components';
 
-import GetNumberArray from 'src/utils/GetNumberArray';
+import { getNumberArray } from 'utils';
 
 import { DatepickerContainer, RegisterDatepickerContainer } from './RegisterDatepicker.styles';
 
 interface IRegisterDatepicker {
   placeholder?: string | undefined;
   error?: string | undefined;
+  register: UseFormRegister<RegisterForm>;
 }
 
-const RegisterDatepicker = ({ error, placeholder }: IRegisterDatepicker) => {
-  const daysArr = GetNumberArray(31);
-  const monthsArr = GetNumberArray(12);
-  const yearsArr = GetNumberArray(dayjs().year() - 3, 1900).reverse();
+const daysArr = getNumberArray(31);
+const monthsArr = getNumberArray(12);
+const yearsArr = getNumberArray(dayjs().year() - 3, 1900).reverse();
 
+const RegisterDatepicker = ({ error, placeholder, register }: IRegisterDatepicker) => {
   return (
     <RegisterDatepickerContainer>
       <InputLabel>
@@ -26,9 +30,24 @@ const RegisterDatepicker = ({ error, placeholder }: IRegisterDatepicker) => {
         </Typography>
       </InputLabel>
       <DatepickerContainer>
-        <StyledSelect placeholder="day" stack={daysArr} />
-        <StyledSelect placeholder="month" stack={monthsArr} />
-        <StyledSelect placeholder="year" stack={yearsArr} />
+        <StyledSelect
+          placeholder="day"
+          stack={daysArr}
+          register={register}
+          formFieldName="date.day"
+        />
+        <StyledSelect
+          placeholder="month"
+          stack={monthsArr}
+          register={register}
+          formFieldName="date.month"
+        />
+        <StyledSelect
+          placeholder="year"
+          stack={yearsArr}
+          register={register}
+          formFieldName="date.year"
+        />
       </DatepickerContainer>
     </RegisterDatepickerContainer>
   );
