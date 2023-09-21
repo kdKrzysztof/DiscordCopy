@@ -37,7 +37,11 @@ const Register = () => {
             error={errors?.password?.message}
             required={true}
           />
-          <RegisterDatepicker placeholder={t('Datepicker')} />
+          <RegisterDatepicker
+            placeholder={t('Datepicker')}
+            register={register}
+            error={errors.date?.root?.message}
+          />
           <Button variant="contained" fullWidth type="submit">
             {t('RegisterButton')}
           </Button>
