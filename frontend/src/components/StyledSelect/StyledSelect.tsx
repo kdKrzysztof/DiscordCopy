@@ -20,7 +20,7 @@ const StyledSelect = <TForm extends FieldValues>({
   register,
   formFieldName
 }: IStyledSelect<TForm>) => {
-  const [value, setValue] = useState<string | number | undefined>('');
+  const [value, setValue] = useState('');
 
   const handleChange = (event: SelectChangeEvent<unknown>) => {
     setValue(event.target.value as string);
