@@ -2,7 +2,7 @@ import * as z from 'zod';
 
 import i18n from 'src/i18n';
 
-import { hasSpecialCharacters } from '..';
+import { getDate, hasSpecialCharacters } from '..';
 
 const { t } = i18n;
 
@@ -23,6 +23,19 @@ const FormSchema = z.object({
         return hasSpecialCharacters(input);
       },
       { message: t('passwordSpecialChars') }
+    ),
+  date: z
+    .object({
+      day: z.number(),
+      month: z.number(),
+      year: z.number()
+    })
+    .refine(
+      (data) => {
+        let date = getDate(data.day, data.month, data.year);
+        return date instanceof Date;
+      },
+      { message: t('invalidDate') }
     )
 });
 
