@@ -1,5 +1,4 @@
 import { InputLabel, Typography } from '@mui/material';
-import dayjs from 'dayjs';
 import type { UseFormRegister } from 'react-hook-form';
 
 import type { RegisterForm } from 'pages/register/Register.types';
@@ -18,7 +17,7 @@ interface IRegisterDatepicker {
 
 const daysArr = getNumberArray(31);
 const monthsArr = getNumberArray(12);
-const yearsArr = getNumberArray(dayjs().year() - 3, 1900).reverse();
+const yearsArr = getNumberArray(new Date().getFullYear() - 3, 1900).reverse();
 
 const RegisterDatepicker = ({ error, placeholder, register }: IRegisterDatepicker) => {
   return (
