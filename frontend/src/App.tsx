@@ -12,7 +12,7 @@ import { ThemeModeContext } from 'context';
 import { useThemeColor } from 'hooks';
 
 import './App.css';
-import Register from './pages/register/Register';
+import Register from 'pages/register/Register';
 
 function App() {
   const { theme, themeColor } = useThemeColor();
