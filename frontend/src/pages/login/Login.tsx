@@ -28,6 +28,7 @@ const Login = () => {
             inputTitle="Email"
             register={register}
             formPropName="email"
+            autoComplete="email"
             error={errors?.email?.message}
             required={true}
             fullWidth
@@ -36,6 +37,7 @@ const Login = () => {
             inputTitle="Password"
             register={register}
             formPropName="password"
+            autoComplete="current-password"
             error={errors?.password?.message}
             required={true}
             fullWidth
