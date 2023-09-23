@@ -28,15 +28,17 @@ const Login = () => {
             inputTitle="Email"
             register={register}
             formPropName="email"
-            required={true}
             error={errors?.email?.message}
+            required={true}
+            fullWidth
           />
           <StyledTextfield
             inputTitle="Password"
             register={register}
             formPropName="password"
-            required={true}
             error={errors?.password?.message}
+            required={true}
+            fullWidth
           />
           <Button variant="contained" fullWidth type="submit">
             {t('LoginButton')}

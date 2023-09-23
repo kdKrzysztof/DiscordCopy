@@ -22,6 +22,7 @@ const Register = () => {
             formPropName="email"
             error={errors?.email?.message}
             required={true}
+            fullWidth
           />
           <StyledTextfield
             inputTitle="Username"
@@ -29,6 +30,7 @@ const Register = () => {
             formPropName="username"
             error={errors?.username?.message}
             required={true}
+            fullWidth
           />
           <StyledTextfield
             inputTitle="Password"
@@ -36,6 +38,7 @@ const Register = () => {
             formPropName="password"
             error={errors?.password?.message}
             required={true}
+            fullWidth
           />
           <RegisterDatepicker
             placeholder={t('Datepicker')}

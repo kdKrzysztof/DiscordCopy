@@ -8,6 +8,7 @@ interface ILoginProps<TForm extends FieldValues> {
   register: UseFormRegister<TForm>;
   formPropName: Path<TForm>;
   required?: boolean;
+  fullWidth?: boolean;
   error?: string | undefined;
 }
 
@@ -16,6 +17,7 @@ const StyledTextfield = <TForm extends FieldValues>({
   register,
   formPropName,
   required,
+  fullWidth,
   error
 }: ILoginProps<TForm>) => {
   return (
@@ -26,7 +28,7 @@ const StyledTextfield = <TForm extends FieldValues>({
           {error ? ' - ' + error : null}
         </Typography>
       </InputLabel>
-      <TextFieldBody fullWidth required={required} {...register(formPropName)} />
+      <TextFieldBody required={required} {...register(formPropName)} fullWidth={fullWidth} />
     </StyledTextFieldContainer>
   );
 };
