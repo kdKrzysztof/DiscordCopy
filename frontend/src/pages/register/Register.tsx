@@ -17,23 +17,23 @@ const Register = () => {
             </Typography>
           </RegisterTitleContainer>
           <StyledTextfield
-            placeholder="Email"
+            inputTitle="Email"
             register={register}
-            name="email"
+            formPropName="email"
             error={errors?.email?.message}
             required={true}
           />
           <StyledTextfield
-            placeholder="Username"
+            inputTitle="Username"
             register={register}
-            name="username"
+            formPropName="username"
             error={errors?.username?.message}
             required={true}
           />
           <StyledTextfield
-            placeholder="Password"
+            inputTitle="Password"
             register={register}
-            name="password"
+            formPropName="password"
             error={errors?.password?.message}
             required={true}
           />

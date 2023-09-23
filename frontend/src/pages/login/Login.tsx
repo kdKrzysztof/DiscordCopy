@@ -25,16 +25,16 @@ const Login = () => {
             <LoginSubtitle variant="subtitle2">{t('LoginSubtitle')}</LoginSubtitle>
           </LoginTitleContainer>
           <StyledTextfield
-            placeholder="Email"
+            inputTitle="Email"
             register={register}
-            name="email"
+            formPropName="email"
             required={true}
             error={errors?.email?.message}
           />
           <StyledTextfield
-            placeholder="Password"
+            inputTitle="Password"
             register={register}
-            name="password"
+            formPropName="password"
             required={true}
             error={errors?.password?.message}
           />

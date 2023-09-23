@@ -4,17 +4,17 @@ import type { FieldValues, Path, UseFormRegister } from 'react-hook-form';
 import { StyledTextFieldContainer, TextFieldBody } from './StyledTextfield.styles';
 
 interface ILoginProps<TForm extends FieldValues> {
-  placeholder?: string;
+  inputTitle?: string;
   register: UseFormRegister<TForm>;
-  name: Path<TForm>;
+  formPropName: Path<TForm>;
   required?: boolean;
   error?: string | undefined;
 }
 
 const StyledTextfield = <TForm extends FieldValues>({
-  placeholder,
+  inputTitle,
   register,
-  name,
+  formPropName,
   required,
   error
 }: ILoginProps<TForm>) => {
@@ -22,11 +22,11 @@ const StyledTextfield = <TForm extends FieldValues>({
     <StyledTextFieldContainer>
       <InputLabel>
         <Typography variant="caption" fontWeight="bold" color={error ? 'error' : 'default'}>
-          {placeholder?.toUpperCase()}
+          {inputTitle?.toUpperCase()}
           {error ? ' - ' + error : null}
         </Typography>
       </InputLabel>
-      <TextFieldBody fullWidth required={required} {...register(name)} />
+      <TextFieldBody fullWidth required={required} {...register(formPropName)} />
     </StyledTextFieldContainer>
   );
 };
