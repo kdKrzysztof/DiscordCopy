@@ -1,4 +1,5 @@
 import { InputLabel, Typography } from '@mui/material';
+import { HTMLInputTypeAttribute } from 'react';
 import type { FieldValues, Path, UseFormRegister } from 'react-hook-form';
 
 import { StyledTextFieldContainer, TextFieldBody } from './StyledTextfield.styles';
@@ -7,6 +8,7 @@ interface ILoginProps<TForm extends FieldValues> {
   inputTitle?: string;
   register: UseFormRegister<TForm>;
   formPropName: Path<TForm>;
+  type?: HTMLInputTypeAttribute;
   required?: boolean;
   fullWidth?: boolean;
   error?: string | undefined;
@@ -18,6 +20,7 @@ const StyledTextfield = <TForm extends FieldValues>({
   formPropName,
   required,
   fullWidth,
+  type,
   error
 }: ILoginProps<TForm>) => {
   return (
@@ -28,7 +31,12 @@ const StyledTextfield = <TForm extends FieldValues>({
           {error ? ' - ' + error : null}
         </Typography>
       </InputLabel>
-      <TextFieldBody required={required} {...register(formPropName)} fullWidth={fullWidth} />
+      <TextFieldBody
+        type={type}
+        required={required}
+        {...register(formPropName)}
+        fullWidth={fullWidth}
+      />
     </StyledTextFieldContainer>
   );
 };

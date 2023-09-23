@@ -17,14 +17,7 @@ const Register = () => {
             </Typography>
           </RegisterTitleContainer>
           <StyledTextfield
-            inputTitle="Email"
-            register={register}
-            formPropName="email"
-            error={errors?.email?.message}
-            required={true}
-            fullWidth
-          />
-          <StyledTextfield
+            type="email"
             inputTitle="Username"
             register={register}
             formPropName="username"
@@ -33,6 +26,16 @@ const Register = () => {
             fullWidth
           />
           <StyledTextfield
+            type="email"
+            inputTitle="E-mail"
+            register={register}
+            formPropName="email"
+            error={errors?.email?.message}
+            required={true}
+            fullWidth
+          />
+          <StyledTextfield
+            type="password"
             inputTitle="Password"
             register={register}
             formPropName="password"
