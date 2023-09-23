@@ -17,7 +17,7 @@ const Register = () => {
             </Typography>
           </RegisterTitleContainer>
           <StyledTextfield
-            type="email"
+            type="text"
             inputTitle="Username"
             register={register}
             formPropName="username"
