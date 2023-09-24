@@ -14,6 +14,16 @@ export default defineConfig({
       pages: path.resolve(__dirname, './src/pages')
     }
   },
+  server: {
+    proxy: {
+      '/api': {
+        target: process.env.API,
+        changeOrigin: true,
+        secure: false,
+        ws: true
+      }
+    }
+  },
   define: {
     global: {
       window: {}
