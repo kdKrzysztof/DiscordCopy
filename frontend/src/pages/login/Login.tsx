@@ -25,6 +25,7 @@ const Login = () => {
             <LoginSubtitle variant="subtitle2">{t('LoginSubtitle')}</LoginSubtitle>
           </LoginTitleContainer>
           <StyledTextfield
+            type="email"
             inputTitle="Email"
             register={register}
             formPropName="email"
@@ -34,6 +35,7 @@ const Login = () => {
             fullWidth
           />
           <StyledTextfield
+            type="password"
             inputTitle="Password"
             register={register}
             formPropName="password"
