@@ -1,9 +1,8 @@
-import VisibilityIcon from '@mui/icons-material/Visibility';
-import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
-import { IconButton, InputAdornment, InputLabel, Typography } from '@mui/material';
+import { InputLabel, Typography } from '@mui/material';
 import { HTMLInputTypeAttribute, useState } from 'react';
 import type { FieldValues, Path, UseFormRegister } from 'react-hook-form';
 
+import ShowPasswordAdornment from './ShowPasswordAdornment';
 import { StyledTextFieldContainer, TextFieldBody } from './StyledTextfield.styles';
 
 interface ILoginProps<TForm extends FieldValues> {
@@ -32,9 +31,13 @@ const StyledTextfield = <TForm extends FieldValues>({
   return (
     <StyledTextFieldContainer>
       <InputLabel>
-        <Typography variant="caption" fontWeight="bold" color={error ? 'error' : 'default'}>
+        <Typography
+          variant="caption"
+          whiteSpace="pre-wrap"
+          fontWeight="bold"
+          color={error ? 'error' : 'default'}>
           {inputTitle?.toUpperCase()}
-          {error ? ' - ' + error : null}
+          {error ? ` - ${error}` : null}
         </Typography>
       </InputLabel>
       <TextFieldBody
@@ -44,13 +47,11 @@ const StyledTextfield = <TForm extends FieldValues>({
         fullWidth={fullWidth}
         autoComplete={autoComplete}
         endAdornment={
-          type === 'password' ? (
-            <InputAdornment position="end">
-              <IconButton onClick={handleShowPass}>
-                {showPassword ? <VisibilityIcon /> : <VisibilityOffIcon />}
-              </IconButton>
-            </InputAdornment>
-          ) : null
+          <ShowPasswordAdornment
+            type={type}
+            showPassword={showPassword}
+            handleShowPass={handleShowPass}
+          />
         }
       />
     </StyledTextFieldContainer>
