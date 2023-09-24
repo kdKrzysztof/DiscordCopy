@@ -1,8 +1,8 @@
-import { Button, Typography } from '@mui/material';
+import { Button, Link, Typography } from '@mui/material';
 
 import { RegisterDatepicker, StyledTextfield } from 'components';
 
-import { RegisterBody, RegisterContainer, RegisterTitleContainer } from './Register.styles';
+import { LogIntoAccountText, RegisterBody, RegisterContainer, RegisterTitleContainer } from './Register.styles';
 import useRegisterUtils from './Register.utils';
 
 const Register = () => {
@@ -54,6 +54,9 @@ const Register = () => {
           <Button variant="contained" fullWidth type="submit">
             {t('RegisterButton')}
           </Button>
+          <LogIntoAccountText variant="subtitle2">
+            {t('HaveAccount')} <Link href="/login">{t('LoginClickHere')}</Link>
+          </LogIntoAccountText>
         </RegisterBody>
       </form>
     </RegisterContainer>

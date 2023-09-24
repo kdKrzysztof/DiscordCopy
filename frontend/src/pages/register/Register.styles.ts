@@ -1,4 +1,4 @@
-import { Box, Paper, styled } from '@mui/material';
+import { Box, Paper, Typography, styled } from '@mui/material';
 
 export const RegisterTitleContainer = styled(Box)({
   display: 'flex',
@@ -31,3 +31,8 @@ export const RegisterBody = styled(Box)(({ theme }) => ({
     marginBottom: theme.spacing(2)
   }
 }));
+
+export const LogIntoAccountText = styled(Typography)({
+  width: '100%',
+  textAlign: 'left'
+});
