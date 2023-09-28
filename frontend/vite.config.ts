@@ -4,6 +4,8 @@ import { defineConfig, loadEnv } from 'vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
 // https://vitejs.dev/config/
+process.env = { ...process.env, ...loadEnv('build', process.cwd()) };
+
 export default defineConfig({
   plugins: [react(), tsconfigPaths()],
   base: './',
@@ -20,7 +22,8 @@ export default defineConfig({
         target: process.env.VITE_API,
         changeOrigin: true,
         secure: false,
-        ws: true
+        ws: true,
+        rewrite: (path) => path.replace(/^\/api/, '')
       }
     }
   },
