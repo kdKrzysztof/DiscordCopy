@@ -5,8 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { registerValidator } from 'utils/validators';
 
 import { getDate } from 'utils';
-
-import { RegisterForm } from './Register.types';
+import { RegisterForm } from 'interfaces/Forms/FormsTypes';
 
 const useRegisterUtils = () => {
   const { t } = useTranslation();
