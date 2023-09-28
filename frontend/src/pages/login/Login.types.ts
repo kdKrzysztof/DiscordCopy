@@ -1,9 +1,6 @@
 import { FieldErrors } from 'react-hook-form';
-import * as z from 'zod';
 
-import { loginValidator } from 'utils/validators';
-
-export type LoginForm = z.infer<typeof loginValidator>;
+import { LoginForm } from 'interfaces/Forms/FormsTypes';
 
 export interface SetErrorsProps {
   errors: FieldErrors<LoginForm>;
