@@ -1,5 +1,4 @@
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
@@ -24,23 +23,11 @@ const useLoginUtils = () => {
     }
   });
 
-  const { data, login, isError, error, isSuccess } = useLogin();
+  const { axiosLogin } = useLogin();
 
   const onSubmit = (formData: LoginForm) => {
-    login(formData);
+    axiosLogin(formData);
   };
-
-  useEffect(() => {
-    if (isError) {
-      console.log(error);
-    }
-  }, [isError]);
-
-  useEffect(() => {
-    if (data) {
-      console.log(data);
-    }
-  }, [isSuccess]);
 
   return { register, handleSubmit, onSubmit, t, errors };
 };
