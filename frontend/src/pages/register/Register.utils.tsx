@@ -4,8 +4,9 @@ import { useTranslation } from 'react-i18next';
 
 import { registerValidator } from 'utils/validators';
 
-import { getDate } from 'utils';
 import { RegisterForm } from 'interfaces/Forms/FormsTypes';
+
+import useRegister from './hooks/useRegister';
 
 const useRegisterUtils = () => {
   const { t } = useTranslation();
@@ -28,8 +29,10 @@ const useRegisterUtils = () => {
     }
   });
 
+  const { axiosRegister } = useRegister();
+
   const onSubmit = (data: RegisterForm) => {
-    let parsedDate = getDate(data.date.day, data.date.month, data.date.year);
+    axiosRegister(data);
   };
 
   return { register, handleSubmit, errors, onSubmit, t };
