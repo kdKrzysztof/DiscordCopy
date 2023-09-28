@@ -10,24 +10,16 @@ class SessionStorage {
   }
 
   get token() {
-    return sessionStorage.getItem('token') as string;
+    return sessionStorage.getItem('accessToken') as string;
   }
 
   private set token(val: string) {
-    sessionStorage.setItem('token', val);
+    sessionStorage.setItem('accessToken', val);
   }
 
-  get userData() {
-    return JSON.parse(sessionStorage.getItem('userData') as string);
-  }
-
-  private set userData(data: Object) {
-    sessionStorage.setItem('userData', JSON.stringify(data));
-  }
-
-  setJWT(data: AxiosResponse) {
-    this.token = data.data['accessToken'];
-    this.refreshToken = data.data['refreshToken'];
+  setJWT(resp: AxiosResponse) {
+    this.token = resp.data['accessToken'];
+    this.refreshToken = resp.data['refreshToken'];
   }
 }
 
