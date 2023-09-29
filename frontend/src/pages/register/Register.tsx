@@ -1,9 +1,15 @@
-import { Button, Link, Typography } from '@mui/material';
+import { Button, Typography } from '@mui/material';
 
 import { RegisterDatepicker, StyledTextfield } from 'components';
 
-import { LogIntoAccountText, RegisterBody, RegisterContainer, RegisterTitleContainer } from './Register.styles';
+import {
+  LogIntoAccountText,
+  RegisterBody,
+  RegisterContainer,
+  RegisterTitleContainer
+} from './Register.styles';
 import useRegisterUtils from './Register.utils';
+import RouterLink from 'components/RouterLink';
 
 const Register = () => {
   const { errors, handleSubmit, onSubmit, register, t } = useRegisterUtils();
@@ -55,7 +61,7 @@ const Register = () => {
             {t('RegisterButton')}
           </Button>
           <LogIntoAccountText variant="subtitle2">
-            {t('HaveAccount')} <Link href="/login">{t('LoginClickHere')}</Link>
+            {t('HaveAccount')} <RouterLink href="/login">{t('LoginClickHere')}</RouterLink>
           </LogIntoAccountText>
         </RegisterBody>
       </form>

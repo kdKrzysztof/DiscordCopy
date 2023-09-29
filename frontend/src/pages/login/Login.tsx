@@ -1,5 +1,7 @@
 import { Button, Link, Typography } from '@mui/material';
 
+import RouterLink from 'src/components/RouterLink';
+
 import { StyledTextfield } from 'components';
 
 import {
@@ -48,7 +50,7 @@ const Login = () => {
             {t('LoginButton')}
           </Button>
           <CreateAccountText variant="subtitle2">
-            {t('LoginNeedAccount')} <Link href="/register">{t('LoginClickHere')}</Link>
+            {t('LoginNeedAccount')} <RouterLink href="/register">{t('LoginClickHere')}</RouterLink>
           </CreateAccountText>
         </LoginBody>
       </form>
