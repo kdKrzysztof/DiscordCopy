@@ -1,11 +1,11 @@
 import { InputLabel, Typography } from '@mui/material';
 import type { UseFormRegister } from 'react-hook-form';
 
-import type { RegisterForm } from 'pages/register/Register.types';
-
 import { StyledSelect } from 'components';
 
 import { getNumberArray } from 'utils';
+
+import type { RegisterForm } from 'interfaces/Forms/FormsTypes';
 
 import { DatepickerContainer, RegisterDatepickerContainer } from './RegisterDatepicker.styles';
 
