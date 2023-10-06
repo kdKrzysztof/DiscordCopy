@@ -4,43 +4,39 @@ import { Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import { Login } from 'pages';
+import Register from 'pages/register/Register';
 
 import { ChangeThemeButton } from 'components';
 
-import { ThemeModeContext } from 'context';
-
-import { useThemeColor } from 'hooks';
-
 import './App.css';
-import Register from 'pages/register/Register';
+import { useThemeColor } from './hooks';
 
 function App() {
-  const { theme, themeColor } = useThemeColor();
+  const theme = useThemeColor();
+
   return (
-    <ThemeModeContext.Provider value={themeColor}>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <ChangeThemeButton theme={theme} themeColor={themeColor} />
-        <Routes>
-          <Route
-            path="/login"
-            element={
-              <Suspense fallback={<></>}>
-                <Login />
-              </Suspense>
-            }
-          />
-          <Route
-            path="/register"
-            element={
-              <Suspense fallback={<></>}>
-                <Register />
-              </Suspense>
-            }
-          />
-        </Routes>
-      </ThemeProvider>
-    </ThemeModeContext.Provider>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <ChangeThemeButton />
+      <Routes>
+        <Route
+          path="/login"
+          element={
+            <Suspense fallback={<></>}>
+              <Login />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/register"
+          element={
+            <Suspense fallback={<></>}>
+              <Register />
+            </Suspense>
+          }
+        />
+      </Routes>
+    </ThemeProvider>
   );
 }
 
