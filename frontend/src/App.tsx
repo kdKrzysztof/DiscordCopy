@@ -3,8 +3,7 @@ import { CssBaseline } from '@mui/material';
 import { Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-import { Login } from 'pages';
-import Register from 'pages/register/Register';
+import { Login, Register } from 'pages';
 
 import { ChangeThemeButton } from 'components';
 
